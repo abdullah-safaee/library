@@ -37,13 +37,15 @@ function createBookElement(bookObject,index){
     title.classList.add('title')
     author.classList.add('author')
     pages.classList.add('pages')
-    readStatus.classList.add('read-status',`${bookObject.read ? 'read' : 'not-read'}`)
+    readStatus.classList.add('read-status')
+    readStatus.classList.add(`${bookObject.read ? 'read' : 'not-read'}`)
+    
     remove.classList.add('remove')
     readStatus.setAttribute("index",index)
     remove.setAttribute("index",index)
 
     readStatus.addEventListener('click',function(){
-        books[index].readStatus = !books[index].readStatus
+        books[index].read = !books[index].read
         resetLibrary(books)
     })
 
@@ -86,7 +88,7 @@ closeDialogButton.addEventListener('click',function(){
 
 form.addEventListener('submit',function(e){
     e.preventDefault()
-    let Ob = new Book(dialogTitle.value,dialogAuthor.value,dialogPages.value,dialogReadCheck.value)
+    let Ob = new Book(dialogTitle.value,dialogAuthor.value,dialogPages.value,dialogReadCheck.checked)
     books.push(Ob)
     form.reset()
     dialog.close()
@@ -95,4 +97,4 @@ form.addEventListener('submit',function(e){
 
 
 
-resetLibrary(books)
+// resetLibrary(books)
