@@ -5,9 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
+
+    <dialog>
+        <form action="">
+            <input required type="text" class="title" placeholder="title">
+            <input required type="text" class="author" placeholder="author">
+            <input required type="number" class="pages" placeholder="number of pages" value="">
+            <label for="read">Did you read it yet  &nbsp;
+                <input type="checkbox" name="read" id="read"> 
+            </label>
+            
+            <button type="reset" class="reset">reset</button>
+            <button type="submit" class="add">Add Book</button>
+            <button type="button" class="close">Close</button>
+        </form>
+    </dialog>
+
+    <header>
+        <h1 class="main-header">Library</h1>
+        <button id="add-book-button" class="add-book">Add book</button>
+        <p class="book-count">Library has <span>no</span> books</p>
+    </header>  
+    <div class="books"> 
+        <div class="book">
+            <h3 class="title">the animal farm</h3>
+            <h6 class="author">George w. orwell</h6>
+            <h6 class="pages">225</h6>
+            <button class="read-status" data-index="1">read</button>
+            <button class="remove" data-index="1">remove</button>
+        </div>
+    </div>
     
 </body>
 </html>
