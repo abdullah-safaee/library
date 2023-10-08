@@ -19,12 +19,6 @@ function Book(title,author,pages,read){
     this.read = read
 }
 
-let animalFarm = new Book('animal farm', 'george orwell',114,false)
-let anotherBook = new Book('some title' ,'some author', 116,true)
-let thirdBook = new Book('last title', 'last author', 446,false)
-
-books.push(animalFarm,anotherBook,thirdBook)
-
 function createBookElement(bookObject,index){
     let book = document.createElement('div')
     let title = document.createElement('h1')
