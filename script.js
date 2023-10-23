@@ -12,11 +12,13 @@ const dialogAuthor = form.querySelector('.author')
 const dialogPages = form.querySelector('.pages')
 const dialogReadCheck = form.querySelector('#read')
 
-function Book(title,author,pages,read){
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
 }
 
 function createBookElement(bookObject,index){
@@ -94,7 +96,3 @@ form.addEventListener('submit',function(e){
     dialog.close()
     resetLibrary(books)
 })
-
-
-
-// resetLibrary(books)
